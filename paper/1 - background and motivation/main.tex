@@ -1,0 +1,21 @@
+\section{Background and Motivation}
+    In its base relase, the gyrokinetic code {\tt GENE} has support for only Maxwellian backgrounds
+    \begin{align}
+        f_{s0}(\bfx; \bfv)  &=  f_{s0}^{\rm Max}(\psi; v_{\parallel}, \mu)  \\
+        &=  n_{s}\sqrt{\frac{m_{s}}{2\pi k_{B}T_{s}}}^{3}\exp\left[- \frac{1}{k_{B}T_{s}}\left(\frac{m_{s}}{2}v_{\parallel}^{2} + B\mu\right)\right]
+    \end{align}
+    in species $s$, where:
+    \begin{itemize}
+        \item  $v_{\parallel} =$ the parallel velocity
+        \item  $\mu = \left(\frac{m_{s}v_{\perp}^{2}}{2B}\right) =$ the magnetic moment
+    \end{itemize}
+    $\psi$ is constant along flux tubes (using the notation as used in \cite{Abe+13}) and the following are functions of $\psi$ only, such that they are constant on flux tubes.
+    \begin{itemize}
+        \item  $n_{s}(\psi) =$ the particle density
+        \item  $T_{s}(\psi) =$ the temperature
+    \end{itemize}
+
+    In reality, the space of background distributions for tokamak plasmas is much more rich than just Maxwellians, and different background distributions can have great effects on the behaviour of the model.
+    
+    \input{paper/1 - background and motivation/1 - shifted maxwellians and bi-maxwellians/main.tex}
+    \input{paper/1 - background and motivation/2 - damped distributions/main.tex}

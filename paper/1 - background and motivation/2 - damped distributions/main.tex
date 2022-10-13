@@ -1,0 +1,27 @@
+\subsection{Damped Distributions}
+    Another common effect to consider is Alfvénic damping, wherein high-energy particles with velocities on the scale of the Alfvén velocity $v_{A} = \frac{B}{\sqrt{\mu_{0}\rho}}$ lose energy due to resonance with the Alfvén waves, causing velocity distributions with sharper cut-offs than the $\calO\left[\exp\left(- {\rm const.}v^{2}\right)\right]$ tails in Maxwellians, shifted Maxwellians, bi-Maxwellians etc. We present here a general way to consider such ``damped distributions''.
+    
+    Suppose, before damping, the background has some classic distribution, e.g. a shifted Maxwellian, with distribution function $\widetilde{f_{s0}}$. Consider this velocity being modified by some ``damping function'', $(v_{\parallel}, \mu) \mapsto (v_{\parallel}, \mu)$ that reduces the velocity of the high-velocity particles, but leaves the low-velocity particles unchanged. Denote this as:
+    \begin{align}
+        v_{\parallel}^{\rm post}(v_{\parallel}^{\rm pre}, \mu^{\rm pre})  &&
+        \mu_{\parallel}^{\rm post}(v_{\parallel}^{\rm pre}, \mu^{\rm pre})
+    \end{align}
+    Similarly, this has the inverse:
+    \begin{align}
+        v_{\parallel}^{\rm pre}(v_{\parallel}^{\rm post}, \mu^{\rm post})  &&
+        \mu_{\parallel}^{\rm pre}(v_{\parallel}^{\rm post}, \mu^{\rm post})
+    \end{align}
+    A reasonable condition on this damping function is that it leaves the velocity of low-energy particles unchanged, namely:
+    \begin{align}
+        \partial_{v_{\parallel}^{\rm pre}}v_{\parallel}^{\rm post}(0, 0)  &&
+        \partial_{v_{\parallel}^{\rm pre}}\mu^{\rm post}(0, 0)  \\
+        \partial_{\mu^{\rm pre}}v_{\parallel}^{\rm post}(0, 0)  &&
+        \partial_{\mu^{\rm pre}}\mu^{\rm post}(0, 0)
+    \end{align}
+    Similarly, for the inverse:
+    \begin{align}
+        \partial_{v_{\parallel}^{\rm post}}v_{\parallel}^{\rm pre}(0, 0)  &&
+        \partial_{v_{\parallel}^{\rm post}}\mu^{\rm pre}(0, 0)  \\
+        \partial_{\mu^{\rm post}}v_{\parallel}^{\rm pre}(0, 0)  &&
+        \partial_{\mu^{\rm post}}\mu^{\rm pre}(0, 0)
+    \end{align}
