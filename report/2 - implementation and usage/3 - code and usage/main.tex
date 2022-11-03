@@ -1,0 +1,22 @@
+\subsection{Code and Usage}
+    The repository for the implementation can be found \href{https://gitlab.mpcdf.mpg.de/g-borisandrews/gene-gpu}{here} (https://gitlab.mpcdf.mpg.de/g-borisandrews/gene-gpu). Unfortunately, since I don't have access to the {\tt GENE} development repository, this is built off a copy of the latest version (as of time of writing) of the CUDA GPU development branch, {\tt cudeunderthehood}, and so it won't be possible for me to maintain this. Anyone with access to the {\tt GENE} development repository however is more than welcome to do so!
+
+    To overview the contents of subsection \ref{damping implementation}, on the contents of the implementation, to run a {\rm GENE} simulation featuring a species with a damped background distribution function, one would need to do the following:
+    \begin{enumerate}
+        \item  Create a new class, {\tt damping\_*\_t} (in a new {\tt damping\_*\_m} module) extending {\tt damping\_t} for the damping function to be considered.
+        
+        Uniform damping (as detailed in section \ref{damped distributions}) is already supported, in {\tt damping\_uniform\_m}.
+
+        \item  Create a new class, {\tt dist\_eq\_*\_damped\_t} (in a new {\tt dist\_eq\_*\_damped\_m} module) extending {\tt dist\_eq\_t} with a new internal variable {\tt dist\_eq\_*\_damped\%damp} of type {\tt damping\_*\_t}. Overwrite the procedures deferred from {\tt dist\_eq\_t} as one normally would for a new class of distribution functions. (Make reference to Figure \ref{distribution procedures} to check how these distribution procedures are intended to evaluate, and don't forget to initialize the damping object {\tt dist\_eq\_*\_damped\%damp}!)
+
+        Damped Maxwellians and shifted Maxwellians are already supported, in \\ {\tt dist\_eq\_maxwellian\_damped\_m} and {\tt dist\_eq\_shifted\_maxwellian\_damped\_m} \\ respectively.
+
+        \item  Add the new class of distribution function as a case in the {\tt initiailize\_fm} procedure in the {\tt vel\_space} module.
+
+        \item  Ensure, as ever, all the new files and their dependencies are added to the relevant makefiles.
+
+        \item  Compile.
+
+        \item  Cross your fingers!
+    \end{enumerate}
+    

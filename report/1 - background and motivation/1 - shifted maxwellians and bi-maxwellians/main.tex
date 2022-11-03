@@ -1,0 +1,19 @@
+\subsection{Shifted Maxwellians and Bi-Maxwellians}
+    Examples include:
+    \begin{itemize}
+        \item  Shifted Maxwellians
+        \begin{align}
+            f_{s0}[\bfx; \bfv]  &=  f_{s0}^{\rm SM}[\psi; v_{\parallel}, \mu]  \\
+            &=  n_{s}\sqrt{\frac{m_{s}}{2\pi k_{B}T_{s}}}^{3}\exp\left[- \frac{1}{k_{B}T_{s}}\left(\frac{m_{s}}{2}(v_{\parallel} \textcolor{red}{- u_{\parallel s}})^{2} + B\mu\right)\right]
+        \end{align}
+        for some parallel velocity $u_{\parallel s}$, allowing for travelling backgrounds. This is particularly relevant for beam injection simulations.
+
+        \item  Bi-Maxwellians
+        \begin{align}
+            f_{s0}[\bfx; \bfv]  &=  f_{s0}^{\rm BM}[\psi; v_{\parallel}, \mu]  \\
+            &=  n_{s}\sqrt{\frac{m_{s}}{2\pi k_{B}T_{s}}}^{3}\exp\left[- \frac{1}{k_{B}}\left(\frac{m_{s}}{2\textcolor{red}{T_{\parallel s}}}v_{\parallel}^{2} + \frac{B}{\textcolor{red}{T_{\perp s}}}\mu\right)\right]
+        \end{align}
+        for some parallel and perpendicular temperature fields $T_{\parallel s}$ and $T_{\perp s}$, allowing for backgrounds with differing variations in velocity in the parallel vs. perpendicular direction. 
+    \end{itemize}
+    These two modified backgrounds were implementing in an old version of {\tt GENE} as part of Alessandro Di Siena's 2020 thesis, \cite{Di20}, for $u_{\parallel s}$, $T_{\parallel s}$, $T_{\perp s}$ functions of $\psi$. Unfortunately, the code in its form from the thesis is not available to the public, and is only partially maintained as part of the {\tt GENE} GPU development branch- many portions of the code presume a Maxwellian background, and do not account for non-Maxwellian backgrounds.
+    
